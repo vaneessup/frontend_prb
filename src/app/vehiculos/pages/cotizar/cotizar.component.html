@@ -1,0 +1,97 @@
+
+<div fxLayout="row"
+     fxLayoutGap="40px"
+     fxLayout.xs="column">
+
+    <div fxFlex="50" fxLayout="column">
+        
+        <div fxLayout="row" 
+             fxLayout.xs="column" 
+             fxLayoutGap="20px">
+            <mat-form-field fxFlex="100" fxLayout.xs="column" >
+                <mat-label>Nombre</mat-label>
+                <input matInput
+                       type="text"
+                       required>
+            </mat-form-field>
+    
+            <mat-form-field fxFlex="100">
+                <mat-label>Apellido</mat-label>
+                <input matInput
+                       type="text"
+                       required>
+            </mat-form-field>
+        </div>
+
+        <mat-form-field>
+            <mat-label>Telefono</mat-label>
+            <input matInput
+                   type="text"
+                   required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput
+                   type="text"
+                   required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Edad</mat-label>
+            <input matInput
+                   type="text"
+                   required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Genero</mat-label>
+            <input matInput
+                   type="text"
+                   required>
+        </mat-form-field>
+
+    <div fxLayout="row" fxLayoutGap="60px">
+            <mat-form-field class="input-width">
+              <mat-select placeholder="departamento" formControlName="departamento" required>
+                <mat-option *ngFor="let plan of departamento" [value]="plan.deptoNombre">
+                  {{ plan.deptoNombre }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="input-width">
+                <mat-select placeholder="municipio" formControlName="municipio" required>
+                  <mat-option *ngFor="let element of municipio" [value]="element.munNombre">
+                    {{ element.munNombre }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <br/>
+    </div>
+
+        <br>
+        <div fxLayout>
+            <button mat-raised-button 
+                    color="primary"
+                    (click)="cotizar()">
+                    Cotizar
+            </button>
+            <span class="spacer"></span>
+
+            <button mat-raised-button
+                    color="warn" 
+                    (click)="Salir()">
+                <mat-icon>remove</mat-icon>
+                Cancelar
+            </button>
+
+        </div>
+    </div>
+
+    <div fxFlex="100">
+ 
+    </div>
+
+</div>
