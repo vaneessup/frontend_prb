@@ -11,7 +11,7 @@ const routs: Routes = [
       component: HomeComponent,
       children: [
         {path: 'listado', component: ListadoComponent},
-        {path: 'cotizar', component:CotizarComponent},
+        {path: 'cliente', component:CotizarComponent},
         {path: ':idVehiculo', component: VehiculoComponent},
         {path: '**',redirectTo: 'listado'},
         ]

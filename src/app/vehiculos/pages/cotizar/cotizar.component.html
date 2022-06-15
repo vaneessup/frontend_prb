@@ -1,24 +1,26 @@
-
 <div fxLayout="row"
      fxLayoutGap="40px"
      fxLayout.xs="column">
 
-    <div fxFlex="50" fxLayout="column">
-        
-        <div fxLayout="row" 
-             fxLayout.xs="column" 
+    <div  fxFlex="50" fxLayout="column" [formGroup]="cotizarForm">
+
+        <div fxLayout="row"
+             fxLayout.xs="column"
              fxLayoutGap="20px">
-            <mat-form-field fxFlex="100" fxLayout.xs="column" >
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
                 <mat-label>Nombre</mat-label>
                 <input matInput
                        type="text"
-                       required>
+                       formControlName="Nombre"
+                       required
+                        >
             </mat-form-field>
-    
+
             <mat-form-field fxFlex="100">
                 <mat-label>Apellido</mat-label>
                 <input matInput
                        type="text"
+                       formControlName="Apellido"
                        required>
             </mat-form-field>
         </div>
@@ -27,13 +29,16 @@
             <mat-label>Telefono</mat-label>
             <input matInput
                    type="text"
-                   required>
+                   formControlName="Telefono"
+                   required
+                   >
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput
                    type="text"
+                   formControlName="Correo"
                    required>
         </mat-form-field>
 
@@ -41,6 +46,7 @@
             <mat-label>Edad</mat-label>
             <input matInput
                    type="text"
+                   formControlName="Edad"
                    required>
         </mat-form-field>
 
@@ -48,40 +54,52 @@
             <mat-label>Genero</mat-label>
             <input matInput
                    type="text"
+                   formControlName="Genero"
                    required>
         </mat-form-field>
 
-    <div fxLayout="row" fxLayoutGap="60px">
+        <div fxLayout="row" fxLayoutGap="60px">
             <mat-form-field class="input-width">
-              <mat-select placeholder="departamento" formControlName="departamento" required>
-                <mat-option *ngFor="let plan of departamento" [value]="plan.deptoNombre">
-                  {{ plan.deptoNombre }}
-                </mat-option>
-              </mat-select>
+                <mat-select placeholder="departamento" formControlName="tb_departamento_idDepartamento" required (ngModelChange)="onChange($event)">
+                    <mat-option *ngFor="let plan of departamentos" [value]="plan.idDepartamento">
+                        {{ plan.deptoNombre }}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
             <br/>
 
             <mat-form-field class="input-width">
-                <mat-select placeholder="municipio" formControlName="municipio" required>
-                  <mat-option *ngFor="let element of municipio" [value]="element.munNombre">
-                    {{ element.munNombre }}
-                  </mat-option>
+                <mat-select placeholder="municipio" formControlName="tb_Municipio_idMunicipio" required>
+                    <mat-option *ngFor="let element of municipios" [value]="element.munNombre">
+                        {{ element.munNombre }}
+                    </mat-option>
                 </mat-select>
-              </mat-form-field>
-              <br/>
-    </div>
+            </mat-form-field>
+            <br/>
+        </div>
+
+        <mat-form-field>
+            <mat-label>Vehiculo</mat-label>
+            <mat-select placeholder="vehiculo" formControlName="Vehiculo" required>
+                <mat-option *ngFor="let element of vehiculos" [value]="element.idVehiculo">
+                    {{ element.Marca }} {{element.Modelo}} {{element.Tipo}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br/>
 
         <br>
         <div fxLayout>
-            <button mat-raised-button 
+            <button mat-raised-button
                     color="primary"
-                    (click)="cotizar()">
-                    Cotizar
+                    (click)="cotizar(valores)">
+                Cotizar
             </button>
+
             <span class="spacer"></span>
 
             <button mat-raised-button
-                    color="warn" 
+                    color="warn"
                     (click)="Salir()">
                 <mat-icon>remove</mat-icon>
                 Cancelar
@@ -91,7 +109,7 @@
     </div>
 
     <div fxFlex="100">
- 
+
     </div>
 
 </div>

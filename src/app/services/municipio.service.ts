@@ -20,9 +20,9 @@ export class municipioService { // propiedad para la api
     }
     // metodo para obtener un unico vehiculo
 
-    getmun(id : string): Observable<municipio> {
+    getmun(id : string): Observable<municipio[]> {
+        const ret =  this.http.get<municipio[]>(`${this.API_mun}/${id}`);
 
-        return this.http.get<municipio>(`${this.API_mun},${id}`);
+        return ret;
     }
-
 }

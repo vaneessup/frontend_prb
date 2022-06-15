@@ -8,7 +8,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
@@ -23,10 +23,10 @@ import {MatInputModule} from '@angular/material/input';
     MatCardModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule,
     MatFormFieldModule,
     MatSelectModule,
     MatTableModule,
+    ReactiveFormsModule,
     MatInputModule
   ]
 })

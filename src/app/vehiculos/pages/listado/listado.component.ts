@@ -17,7 +17,7 @@ export class ListadoComponent implements AfterViewInit, OnInit {
   //dataSource = new MatTableDataSource<vehiculos>(ELEMENT_DATA);
   clickedRows = new Set<any>();
   vehic: CarsL[] = [];
- 
+
   constructor(private CarsService: CarsService,
     private dialog: MatDialog) { }
 
@@ -33,8 +33,8 @@ export class ListadoComponent implements AfterViewInit, OnInit {
   onCreate(){
         const dialogConfig = new MatDialogConfig();
         dialogConfig.disableClose = true;
-        dialogConfig.width = "40%";
-        dialogConfig.height = "60%"
+        dialogConfig.width = "45%";
+        dialogConfig.height = "80%"
         this.dialog.open(CotizarComponent, dialogConfig);
   }
 }

@@ -10,7 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { VehiculoComponent } from './vehiculos/pages/vehiculo/vehiculo.component';
 import { ListadoComponent } from './vehiculos/pages/listado/listado.component';
 import { CarsService } from './services/cars.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,8 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [CarsService],
