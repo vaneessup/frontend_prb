@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   exports:[
@@ -27,6 +28,7 @@ import {MatInputModule} from '@angular/material/input';
     MatSelectModule,
     MatTableModule,
     ReactiveFormsModule,
+    MatSnackBarModule,
     MatInputModule
   ]
 })

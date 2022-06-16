@@ -2,7 +2,7 @@
      fxLayoutGap="40px"
      fxLayout.xs="column">
 
-    <div  fxFlex="50" fxLayout="column" [formGroup]="cotizarForm">
+    <div  fxFlex="50" fxLayout="column" [formGroup]="formulario">
 
         <div fxLayout="row"
              fxLayout.xs="column"
@@ -69,8 +69,8 @@
             <br/>
 
             <mat-form-field class="input-width">
-                <mat-select placeholder="municipio" formControlName="tb_Municipio_idMunicipio" required>
-                    <mat-option *ngFor="let element of municipios" [value]="element.munNombre">
+                <mat-select placeholder="municipio" formControlName="tb_municipio_idMunicipio" required>
+                    <mat-option *ngFor="let element of municipios" [value]="element.idMunicipio">
                         {{ element.munNombre }}
                     </mat-option>
                 </mat-select>
@@ -80,7 +80,7 @@
 
         <mat-form-field>
             <mat-label>Vehiculo</mat-label>
-            <mat-select placeholder="vehiculo" formControlName="Vehiculo" required>
+            <mat-select placeholder="vehiculo" formControlName="tb_vehiculo_idVehiculo" required>
                 <mat-option *ngFor="let element of vehiculos" [value]="element.idVehiculo">
                     {{ element.Marca }} {{element.Modelo}} {{element.Tipo}}
                 </mat-option>
@@ -92,7 +92,9 @@
         <div fxLayout>
             <button mat-raised-button
                     color="primary"
-                    (click)="cotizar(valores)">
+                    (click)=cotizar()
+                    (click) = "openSnackBar('Registro Guardado', 'Dismiss')"
+                    [disabled]="formulario.invalid">
                 Cotizar
             </button>
 
@@ -100,7 +102,9 @@
 
             <button mat-raised-button
                     color="warn"
-                    (click)="Salir()">
+                    (click)="Salir()"
+            >
+
                 <mat-icon>remove</mat-icon>
                 Cancelar
             </button>

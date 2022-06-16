@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VehiculoComponent } from './vehiculos/pages/vehiculo/vehiculo.component';
-import { ListadoComponent } from './vehiculos/pages/listado/listado.component';
 import { CarsService } from './services/cars.service';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
